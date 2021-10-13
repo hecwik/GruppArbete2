@@ -118,7 +118,7 @@ namespace GroupAssignment2
             for (int i = 0; i < length; i++)
             {
                 // check if cards[i] is null (if the card is drawn from the deck)
-                // if null, shift the next element to that spot to fill the empty index left by drawn card
+                // if null, shift the next elements to that spot length-1 times to fill the empty index left by drawn card
                 if (cards[i] == null)
                 {
                     for (int j = i; j < length - 1; j++)
