@@ -43,25 +43,34 @@ namespace GroupAssignment2
         /// </summary>
         public void Shuffle(DeckOfCards myDeck)
         {
-            Console.WriteLine($"\nA shuffled deck with {myDeck.Count} cards:\n");
-            Console.WriteLine(myDeck);
-            var rnd1 = new Random(); //rnd is now a random generator - see .NET documentation
-            var tmp = new PlayingCard();
-
-            int count = 0;
-
-            // swap 1000 times
-            for (int i = 0; i < 1000; i++)
+            try
             {
-                for (int unsortedStart = 0; unsortedStart <= Count - 1; unsortedStart++)
+
+
+                Console.WriteLine($"\nA shuffled deck with {myDeck.Count} cards:\n");
+                Console.WriteLine(myDeck);
+                var rnd1 = new Random(); //rnd is now a random generator - see .NET documentation
+                var tmp = new PlayingCard();
+
+                int count = 0;
+
+                // swap 1000 times
+                for (int i = 0; i < 1000; i++)
                 {
-                    // swap cards in the array with a card at a random index using Random object 
-                    tmp = cards[unsortedStart];
-                    int index = rnd1.Next(0, unsortedStart + 1);
-                    cards[unsortedStart] = cards[index];
-                    cards[index] = tmp;
+                    for (int unsortedStart = 0; unsortedStart <= Count - 1; unsortedStart++)
+                    {
+                        // swap cards in the array with a card at a random index using Random object 
+                        tmp = cards[unsortedStart];
+                        int index = rnd1.Next(0, unsortedStart + 1);
+                        cards[unsortedStart] = cards[index];
+                        cards[index] = tmp;
+                    }
+                    count++;
                 }
-                count++;
+            } 
+            catch(Exception msg)
+            {
+                Console.WriteLine(msg.Message);
             }
         }
 
@@ -157,13 +166,22 @@ namespace GroupAssignment2
         // method that draws three cards from the top and prints them out to the console
         public static void DrawTopCards(DeckOfCards cardDeck)
         {
-            Console.WriteLine($"\nRemove three cards from the top:\n");
-            Console.WriteLine($"First card drawn: {cardDeck.GetTopCard()}");
-            Console.WriteLine($"Second card drawn: {cardDeck.GetTopCard()}");
-            Console.WriteLine($"Third card drawn:  {cardDeck.GetTopCard()}");
-            Console.WriteLine();
-            Console.WriteLine($"Remaining cards in the deck ({cardDeck.CardCounter()} cards): \n");
-            Console.WriteLine(cardDeck);
+            try
+            {
+
+
+                Console.WriteLine($"\nRemove three cards from the top:\n");
+                Console.WriteLine($"First card drawn: {cardDeck.GetTopCard()}");
+                Console.WriteLine($"Second card drawn: {cardDeck.GetTopCard()}");
+                Console.WriteLine($"Third card drawn:  {cardDeck.GetTopCard()}");
+                Console.WriteLine();
+                Console.WriteLine($"Remaining cards in the deck ({cardDeck.CardCounter()} cards): \n");
+                Console.WriteLine(cardDeck);
+            } 
+            catch(Exception msg)
+            {
+                Console.WriteLine(msg.Message);
+            }
         }
     }
 }
