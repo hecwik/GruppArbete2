@@ -45,8 +45,6 @@ namespace GroupAssignment2
         {
             try
             {
-
-
                 Console.WriteLine($"\nA shuffled deck with {myDeck.Count} cards:\n");
                 Console.WriteLine(myDeck);
                 var rnd1 = new Random(); //rnd is now a random generator - see .NET documentation
