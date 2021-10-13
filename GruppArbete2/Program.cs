@@ -16,13 +16,14 @@ namespace GroupAssignment2
         {
             //Print out 3 random cards
 
-            // calling a method that returns a new random card thrice
+            // calling method for getting a random card three times
             Console.WriteLine($"\n3 randomly generated cards:\n");
             Console.WriteLine(DeckOfCards.GetRandomCard());
             Console.WriteLine(DeckOfCards.GetRandomCard());
             Console.WriteLine(DeckOfCards.GetRandomCard());
 
             DeckOfCards myDeck = new DeckOfCards();
+
             Console.WriteLine($"\nA freshly created deck with {myDeck.Count} cards:\n");
             Console.WriteLine(myDeck);
 
