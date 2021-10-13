@@ -168,8 +168,6 @@ namespace GroupAssignment2
         {
             try
             {
-
-
                 Console.WriteLine($"\nRemove three cards from the top:\n");
                 Console.WriteLine($"First card drawn: {cardDeck.GetTopCard()}");
                 Console.WriteLine($"Second card drawn: {cardDeck.GetTopCard()}");
